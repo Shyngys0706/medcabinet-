@@ -1,0 +1,191 @@
+{
+  "users": [
+    {
+      "id": "usr-admin-1",
+      "name": "Жақсылық Шыңғысхан",
+      "login": "admin",
+      "phone": "+77777778899",
+      "passwordHash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+      "role": "admin",
+      "email": "syngyszaksylyk854@gmail.com",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "usr-doc-1",
+      "name": "Д-р Берік Ерболұлы",
+      "login": "dr_berik",
+      "phone": "+77011112233",
+      "passwordHash": "f348d5628621f3d8f59c8cabda0f8eb0aa7e0514a90be7571020b1336f26c113",
+      "role": "doctor",
+      "specialty": "Кардиолог-терапевт",
+      "assignedCabinet": "102",
+      "email": "berik.cardio@medcabinet.kz",
+      "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80",
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "usr-pat-1",
+      "name": "Марат Жұмабаев",
+      "login": "marat",
+      "phone": "+77051234567",
+      "passwordHash": "d4587ea9ead060c13fd994f21ecfa7926272a78854a2c20136b10a3c9e53e71e",
+      "role": "patient",
+      "iin": "920415350124",
+      "email": "marat.zh@gmail.com",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+      "createdAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "id": "usr-1794406290164",
+      "name": "Тест Науқас",
+      "login": "test_patient",
+      "phone": "+77719998877",
+      "passwordHash": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+      "role": "patient",
+      "iin": "",
+      "email": "test_patient@medcabinet.kz",
+      "avatar": "",
+      "createdAt": "2026-11-11T14:11:30.164Z"
+    }
+  ],
+  "cabinets": [
+    {
+      "id": "cab-101",
+      "number": "101",
+      "title": "Жалпы терапия және тексеру",
+      "floor": 1,
+      "category": "Терапия",
+      "status": "available",
+      "equipment": [
+        "ЭКГ аппараты",
+        "Сфигмоманометр",
+        "Кушетка",
+        "Дәрігерлік үстел"
+      ]
+    },
+    {
+      "id": "cab-102",
+      "number": "102",
+      "title": "Кардиология және ЭКГ кабинеті",
+      "floor": 1,
+      "category": "Кардиология",
+      "status": "booked",
+      "equipment": [
+        "12-арналы ЭКГ",
+        "Холтер мониторы",
+        "Дефибриллятор",
+        "ЭхоКГ аппараты"
+      ]
+    },
+    {
+      "id": "cab-201",
+      "number": "201",
+      "title": "Ультрадыбыстық зерттеу (УДЗ / УЗИ)",
+      "floor": 2,
+      "category": "Диагностика",
+      "status": "available",
+      "equipment": [
+        "УДЗ аппараты (3D/4D)",
+        "Допплер датчигі",
+        "Медициналық гель жылытқыш"
+      ]
+    },
+    {
+      "id": "cab-202",
+      "number": "202",
+      "title": "Рентген-диагностикалық кешен",
+      "floor": 2,
+      "category": "Рентгенология",
+      "status": "sanitizing",
+      "equipment": [
+        "Сандық рентген",
+        "Қорғаныш экрандары",
+        "Автоматты басқару пульті"
+      ]
+    },
+    {
+      "id": "cab-301",
+      "number": "301",
+      "title": "Офтальмология және көз тексеру",
+      "floor": 3,
+      "category": "Офтальмология",
+      "status": "available",
+      "equipment": [
+        "Щелевая лампа",
+        "Авторефрактометр",
+        "Сивцев кестесі"
+      ]
+    },
+    {
+      "id": "cab-302",
+      "number": "302",
+      "title": "Стоматологиялық емдеу кабинеті",
+      "floor": 3,
+      "category": "Стоматология",
+      "status": "available",
+      "equipment": [
+        "Стоматологиялық қондырғы",
+        "Ультрадыбыстық скалер",
+        "Автоклав"
+      ]
+    },
+    {
+      "id": "cab-401",
+      "number": "401",
+      "title": "Хирургиялық таңу және манипуляциялық",
+      "floor": 4,
+      "category": "Хирургия",
+      "status": "available",
+      "equipment": [
+        "Стерильдеу шкафы",
+        "Операциялық шам",
+        "Манипуляциялық үстел"
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": "book-1",
+      "cabinetId": "cab-102",
+      "cabinetNumber": "102",
+      "doctorId": "usr-doc-1",
+      "doctorName": "Д-р Берік Ерболұлы",
+      "date": "2026-11-12",
+      "startTime": "09:00",
+      "endTime": "13:00",
+      "purpose": "Жоспарлы кардиологиялық қабылдау",
+      "needsSterilization": true,
+      "createdAt": "2026-11-11T09:00:00.000Z"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "app-1",
+      "patientId": "usr-pat-1",
+      "patientName": "Марат Жұмабаев",
+      "patientPhone": "+77051234567",
+      "patientIin": "920415350124",
+      "doctorId": "usr-doc-1",
+      "doctorName": "Д-р Берік Ерболұлы",
+      "cabinetNumber": "102",
+      "date": "2026-11-12",
+      "time": "10:00",
+      "symptoms": "Жүрек соғысының жиілеуі, қан қысымын тексеру",
+      "status": "confirmed",
+      "createdAt": "2026-11-11T09:15:00.000Z"
+    }
+  ],
+  "reminders": [
+    {
+      "id": "rem-1",
+      "recipientName": "Марат Жұмабаев",
+      "recipientPhone": "+77051234567",
+      "channel": "SMS",
+      "title": "Қабылдауға жазылу расталды",
+      "message": "Құрметті Марат Жұмабаев! 2026-11-12 сағат 10:00-де Д-р Берік Ерболұлы қабылдауына (№102 каб.) жазылдыңыз.",
+      "status": "sent",
+      "sentAt": "10:05"
+    }
+  ]
+}

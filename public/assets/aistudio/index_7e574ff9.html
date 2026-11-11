@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedCabinet — by Жақсылық Шыңғысхан | Курстық жұмыс</title>
+  <meta name="description" content="Медициналық кабинеттерді брондау және қабылдауға жазылу веб-жүйесі. Авторы: Жақсылық Шыңғысхан. HTML5, CSS3, JavaScript, LocalStorage.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Жоба авторы мен статус жолағы -->
+  <div class="top-creator-bar">
+    <div class="container">
+      <div class="creator-badge">
+        <span>👨‍💻 Жоба авторы: <strong>Жақсылық Шыңғысхан</strong></span>
+        <span>•</span>
+        <span>Курстық жұмыс (HTML / CSS / JavaScript)</span>
+      </div>
+      <div class="storage-badge">
+        <span>💾 Мәліметтер базасы: <strong>Браузер LocalStorage</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Негізгі тақырыптық жолақ (Header) -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <div class="brand-icon">✚</div>
+        <div class="brand-info">
+          <h1>MedCabinet</h1>
+          <span>by <strong class="brand-author">Жақсылық Шыңғысхан</strong> • Дәрігерлік портал</span>
+        </div>
+      </a>
+
+      <!-- Негізгі навигация -->
+      <nav class="nav-tabs">
+        <button class="tab-btn active" data-view="catalog">
+          <span>Кабинеттер каталогы</span>
+        </button>
+        <button class="tab-btn" data-view="bookings">
+          <span>Менің брондарым</span>
+        </button>
+        <button class="tab-btn" data-view="reminders">
+          <span>Еске салғыштар (SMS)</span>
+        </button>
+      </nav>
+
+      <!-- Оң жақтағы қолданушы батырмалары -->
+      <div class="header-actions">
+        <button class="user-profile-btn" onclick="openModal('profile-modal')" title="Жеке профиль және фотоны өзгерту">
+          <div id="user-avatar" class="user-avatar-img">Ж</div>
+          <div class="user-meta">
+            <div id="user-name" class="name">Жақсылық Шыңғысхан</div>
+            <div id="user-role" class="role">Клиника әкімшісі</div>
+          </div>
+        </button>
+        <button class="btn btn-outline btn-sm" onclick="exportDatabase()" title="Барлық мәліметтерді JSON файлы ретінде сақтау">
+          💾 Сақтау (JSON)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Жылдам рөл ауыстырғыш (Қорғау кезінде көрсетуге өте ыңғайлы) -->
+  <div class="role-quick-bar">
+    <div class="container">
+      <div class="role-switcher-group">
+        <span class="role-label">Жүйелік рөл:</span>
+        <button class="role-pill" data-role="doctor" onclick="switchUserRole('doctor')">
+          🩺 Дәрігер
+        </button>
+        <button class="role-pill" data-role="patient" onclick="switchUserRole('patient')">
+          👤 Науқас
+        </button>
+        <button class="role-pill active" data-role="admin" onclick="switchUserRole('admin')">
+          🛡️ Әкімші (Жақсылық Ш.)
+        </button>
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-outline btn-sm" onclick="openModal('new-cabinet-modal')">
+          ➕ Жаңа кабинет қосу
+        </button>
+        <button class="btn btn-outline btn-sm" onclick="resetDatabase()" style="color: #64748b;">
+          🔄 Базаны жаңарту
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Негізгі жұмыс кеңістігі -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Статистика панелі -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-info">
+            <p>Жалпы кабинеттер саны</p>
+            <h3 id="stat-total">7</h3>
+          </div>
+          <div class="stat-icon stat-teal">🏢</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-info">
+            <p>Қолжетімді бос кабинеттер</p>
+            <h3 id="stat-available">5</h3>
+          </div>
+          <div class="stat-icon stat-green">✓</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-info">
+            <p>Брондалған кабинеттер</p>
+            <h3 id="stat-booked">1</h3>
+          </div>
+          <div class="stat-icon stat-blue">📅</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-info">
+            <p>Тіркелген қабылдаулар</p>
+            <h3 id="stat-appointments">1</h3>
+          </div>
+          <div class="stat-icon stat-amber">👥</div>
+        </div>
+      </div>
+
+      <!-- 1-КӨРІНІС: КАБИНЕТТЕР КАТАЛОГЫ -->
+      <section id="view-catalog">
+        <!-- Сүзгі және іздеу жолағы -->
+        <div class="filter-bar">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" class="search-input" placeholder="Кабинет нөмірі, атауы, аппаратура бойынша іздеу...">
+          </div>
+
+          <div class="floor-filters">
+            <span style="font-size: 12px; font-weight: 700; color: #64748b; margin-right: 6px;">Қабат:</span>
+            <button class="floor-btn active" data-floor="all">Барлығы</button>
+            <button class="floor-btn" data-floor="1">1-қабат</button>
+            <button class="floor-btn" data-floor="2">2-қабат</button>
+            <button class="floor-btn" data-floor="3">3-қабат</button>
+            <button class="floor-btn" data-floor="4">4-қабат</button>
+          </div>
+        </div>
+
+        <!-- Кабинеттер картасы -->
+        <div id="cabinets-container" class="cabinets-grid">
+          <!-- JavaScript арқылы динамикалық толтырылады -->
+        </div>
+      </section>
+
+      <!-- 2-КӨРІНІС: МЕНІҢ БРОНДАРЫМ -->
+      <section id="view-bookings" style="display: none;">
+        <div style="background: white; border-radius: 16px; border: 1px solid #e2e8f0; padding: 24px; margin-bottom: 24px;">
+          <h2 style="font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Брондаулар мен қабылдау кестесі</h2>
+          <p style="font-size: 13px; color: #64748b; margin-bottom: 20px;">
+            Мұнда таңдалған рөлге сәйкес (Дәрігер немесе Науқас) кабинеттердің броньдары мен қабылдау талондары шығады.
+          </p>
+          <div id="my-bookings-container">
+            <!-- Деректер кестесі -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 3-КӨРІНІС: ЕСКЕ САЛҒЫШТАР ЦЕНТРІ -->
+      <section id="view-reminders" style="display: none;">
+        <div style="background: white; border-radius: 16px; border: 1px solid #e2e8f0; padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <div>
+              <h2 style="font-size: 18px; font-weight: 800; color: #0f172a;">Автоматты еске салғыштар (SMS & WhatsApp)</h2>
+              <p style="font-size: 13px; color: #64748b;">
+                Кабинетті брондағанда немесе қабылдауға жазылғанда жүйе автоматты хабарламалар жасайды.
+              </p>
+            </div>
+            <span class="badge" style="background:#0d9488; color:white; padding: 6px 12px; font-size: 12px;">Тікелей симуляция</span>
+          </div>
+
+          <div id="reminders-list">
+            <!-- Хабарламалар тізімі -->
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ================= МОДАЛЬДІК ТЕРЕЗЕЛЕР ================= -->
+
+  <!-- 1. Профиль және фотосуретті өзгерту/өшіру модалі -->
+  <div id="profile-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Пайдаланушы профилі</h3>
+        <button class="modal-close" onclick="closeModal('profile-modal')">×</button>
+      </div>
+      <div class="modal-body">
+        <!-- Аватар басқару бөлігі -->
+        <div class="avatar-manager">
+          <img id="modal-avatar-preview" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" class="avatar-preview-lg" alt="Аватар">
+          <div class="avatar-actions">
+            <span style="font-size: 12px; font-weight: 700; color: #334155;">Профиль суреті (Аватар)</span>
+            <div style="display: flex; gap: 8px;">
+              <label class="btn btn-primary btn-sm" style="cursor: pointer;">
+                📷 Суретті өзгерту
+                <input type="file" accept="image/*" style="display: none;" onchange="handleAvatarUpload(event)">
+              </label>
+              <button type="button" class="btn btn-danger btn-sm" onclick="handleAvatarDelete()">
+                🗑️ Өшіру
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Аты-жөні</label>
+          <input type="text" class="form-input" id="profile-name-val" value="Жақсылық Шыңғысхан" readonly>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Корпоративтік пошта / Домен</label>
+          <input type="text" class="form-input" id="profile-email-val" value="syngyszaksylyk854@densaulyq.kz" readonly>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Телефон нөмірі</label>
+          <input type="text" class="form-input" id="profile-phone-val" value="+7 (777) 777-88-99" readonly>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="closeModal('profile-modal')">Жабу</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Дәрігер: Кабинетті брондау модалі -->
+  <div id="booking-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Кабинетті брондау</h3>
+        <button class="modal-close" onclick="closeModal('booking-modal')">×</button>
+      </div>
+      <form onsubmit="submitBooking(event)">
+        <input type="hidden" id="booking-cab-id">
+        <div class="modal-body">
+          <div style="background: #f0fdfa; border: 1px solid #99f6e4; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+            <strong id="booking-cab-number" style="font-size: 13px; color: #0f766e;"></strong>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Брондау күні</label>
+            <input type="date" id="booking-date" class="form-input" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label class="form-label">Басталу уақыты</label>
+              <select id="booking-start" class="form-select">
+                <option value="08:00">08:00</option>
+                <option value="09:00" selected>09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="14:00">14:00</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Аяқталу уақыты</label>
+              <select id="booking-end" class="form-select">
+                <option value="12:00">12:00</option>
+                <option value="13:00" selected>13:00</option>
+                <option value="16:00">16:00</option>
+                <option value="18:00">18:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Брондау мақсаты</label>
+            <input type="text" id="booking-purpose" class="form-input" placeholder="Мысалы: Жоспарлы пациенттерді қабылдау" required>
+          </div>
+
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; cursor: pointer;">
+              <input type="checkbox" id="booking-sterilize" checked>
+              Санитарлық кварцтау мен стерилизация сұранысы
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('booking-modal')">Бас тарту</button>
+          <button type="submit" class="btn btn-primary">Растап брондау</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Науқас: Дәрігерге қабылдауға жазылу модалі -->
+  <div id="appointment-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Дәрігердің қабылдауына жазылу</h3>
+        <button class="modal-close" onclick="closeModal('appointment-modal')">×</button>
+      </div>
+      <form onsubmit="submitAppointment(event)">
+        <input type="hidden" id="appointment-cab-id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Дәрігерді таңдаңыз</label>
+            <select id="appointment-doctor" class="form-select" required></select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label class="form-label">Күні</label>
+              <input type="date" id="appointment-date" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Уақыты</label>
+              <select id="appointment-time" class="form-select">
+                <option value="09:00">09:00</option>
+                <option value="09:30">09:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30" selected>10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Шағым немесе қабылдау себебі</label>
+            <textarea id="appointment-symptoms" class="form-textarea" rows="2" placeholder="Мысалы: Бас айналу, қан қысымын тексеру" required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('appointment-modal')">Бас тарту</button>
+          <button type="submit" class="btn btn-primary">Жазылуды растау</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Әкімші: Жаңа кабинет қосу модалі -->
+  <div id="new-cabinet-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Жаңа кабинет қосу</h3>
+        <button class="modal-close" onclick="closeModal('new-cabinet-modal')">×</button>
+      </div>
+      <form onsubmit="submitNewCabinet(event)">
+        <div class="modal-body">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label class="form-label">Кабинет нөмірі</label>
+              <input type="text" id="new-cab-num" class="form-input" placeholder="Мысалы: 204" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Қабат</label>
+              <select id="new-cab-floor" class="form-select">
+                <option value="1">1-қабат</option>
+                <option value="2" selected>2-қабат</option>
+                <option value="3">3-қабат</option>
+                <option value="4">4-қабат</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Кабинет атауы</label>
+            <input type="text" id="new-cab-title" class="form-input" placeholder="Мысалы: Эндокринология кабинеті" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Бөлім / Санат</label>
+            <input type="text" id="new-cab-category" class="form-input" placeholder="Мысалы: Терапия" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Жабдықтар (үтір арқылы)</label>
+            <input type="text" id="new-cab-equipment" class="form-input" placeholder="Глюкометр, Кушетка, Бой өлшегіш">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('new-cabinet-modal')">Бас тарту</button>
+          <button type="submit" class="btn btn-primary">Базаға сақтау</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Басып шығару аймағы (Print Pass) -->
+  <div id="print-pass-area" style="display: none;"></div>
+
+  <!-- Хабарламалар контейнері (Toast) -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Скрипт (Таза JavaScript) -->
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>Курстық жұмыс — Жақсылық Шыңғысхан</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page Section1 {
+  size: 210mm 297mm;
+  margin: 20mm 10mm 20mm 30mm;
+  mso-header-margin: 35.4pt;
+  mso-footer-margin: 35.4pt;
+  mso-paper-source: 0;
+}
+div.Section1 {
+  page: Section1;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  line-height: 1.15;
+  color: #000000;
+  background-color: #ffffff;
+}
+p, div, li {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  line-height: 1.15;
+  margin: 0pt 0pt 6pt 0pt;
+  text-align: justify;
+}
+p.MsoNormal {
+  text-indent: 1.25cm;
+  margin-bottom: 6pt;
+}
+p.title-p {
+  text-indent: 0cm;
+  text-align: center;
+  margin-bottom: 4pt;
+}
+p.right-p {
+  text-indent: 0cm;
+  text-align: right;
+  margin-bottom: 4pt;
+}
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13pt;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 18pt;
+  margin-bottom: 12pt;
+  page-break-after: avoid;
+}
+h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: left;
+  text-indent: 1.25cm;
+  margin-top: 14pt;
+  margin-bottom: 8pt;
+  page-break-after: avoid;
+}
+table.toc-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+}
+table.toc-table td {
+  border: none;
+  padding: 4pt 0pt;
+  font-size: 12pt;
+  line-height: 1.2;
+}
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12pt 0;
+  font-size: 11pt;
+}
+table.data-table th, table.data-table td {
+  border: 1px solid #000000;
+  padding: 6pt;
+  text-align: left;
+  line-height: 1.15;
+}
+table.data-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center;
+}
+ul {
+  margin-top: 0pt;
+  margin-bottom: 6pt;
+  padding-left: 1.25cm;
+}
+li {
+  text-indent: 0cm;
+  margin-bottom: 4pt;
+}
+.page-break {
+  page-break-before: always;
+  mso-special-character: line-break;
+  clear: all;
+}
+.code-box {
+  font-family: "Courier New", monospace;
+  font-size: 9.5pt;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 8pt;
+  margin: 8pt 0pt;
+  white-space: pre-wrap;
+  line-height: 1.2;
+}
+</style>
+</head>
+
+<body lang=KK>
+<div class="Section1">
+
+<!-- ================= 1. ТИТУЛДЫҚ БЕТ ================= -->
+<div style="text-align: center; margin-top: 10pt;">
+  <p class="title-p" style="font-size: 13pt; font-weight: bold;">Қ. ЖҰБАНОВ АТЫНДАҒЫ АҚТӨБЕ ӨҢІРЛІК УНИВЕРСИТЕТІ</p>
+  <p class="title-p" style="font-weight: bold;">ФИЗИКА - МАТЕМАТИКА ФАКУЛЬТЕТІ</p>
+  <p class="title-p" style="font-weight: bold;">ИНФОРМАТИКА ЖӘНЕ АҚПАРАТТЫҚ ТЕХНОЛОГИЯЛАР КАФЕДРАСЫ</p>
+</div>
+
+<div style="margin-top: 40pt; text-align: right;">
+  <p class="right-p" style="font-weight: bold;">«Қорғауға жіберілді»</p>
+  <p class="right-p">Кафедра меңгерушісі: _________ Ж.Қ. Убаева</p>
+  <p class="right-p">«____» _______________ 2026 ж.</p>
+</div>
+
+<div style="margin-top: 60pt; text-align: center;">
+  <p class="title-p" style="font-size: 16pt; font-weight: bold; letter-spacing: 1px;">КУРСТЫҚ ЖҰМЫС</p>
+  <p class="title-p" style="margin-top: 15pt;"><b>Білім беру бағдарламасы:</b> 6B06106 – «ІТ медицина»</p>
+  <p class="title-p"><b>Пән:</b> «Медицинадағы интернет технологиялар»</p>
+  <p class="title-p" style="font-size: 13pt; font-weight: bold; margin-top: 20pt;">
+    Тақырыбы: «Медициналық кабинеттерді брондау веб-жүйесін құру»
+  </p>
+</div>
+
+<div style="margin-top: 60pt; margin-left: 50%;">
+  <p class="title-p" style="text-align: left;"><b>Орындаған:</b></p>
+  <p class="title-p" style="text-align: left;">3-курс студенті: Жақсылық Шыңғысхан</p>
+  <p class="title-p" style="text-align: left; margin-top: 10pt;"><b>Ғылыми жетекшісі:</b></p>
+  <p class="title-p" style="text-align: left;">аға оқытушы: ____________________</p>
+</div>
+
+<div style="margin-top: 90pt; text-align: center;">
+  <p class="title-p" style="font-weight: bold;">Ақтөбе 2026</p>
+</div>
+
+<!-- НАҚТЫ WORD РАЗРЫВЫ (PAGE BREAK) -->
+<br clear=all style='mso-special-character:line-break;page-break-before:always'>
+
+<!-- ================= 2. МАЗМҰНЫ ================= -->
+<h1>МАЗМҰНЫ</h1>
+
+<table class="toc-table">
+  <tr>
+    <td style="font-weight: bold;">КІРІСПЕ</td>
+    <td style="text-align: right; width: 60px; font-weight: bold;">3</td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold; padding-top: 6pt;">1. ЖАЛПЫ БӨЛІМ (ТЕОРИЯЛЫҚ НЕГІЗДЕРІ)</td>
+    <td style="text-align: right; font-weight: bold; padding-top: 6pt;">5</td>
+  </tr>
+  <tr>
+    <td style="padding-left: 20pt;">1.1 Есептің қойылуы, пәндік саланы сипаттау және талдау</td>
+    <td style="text-align: right;">5</td>
+  </tr>
+  <tr>
+    <td style="padding-left: 20pt;">1.2 Сайтты құру кезеңдері, қолданылатын веб-технологиялар және олардың мінездемесі</td>
+    <td style="text-align: right;">7</td>
+  </tr>
+  <tr>
+    <td style="padding-left: 20pt;">1.3 Деректер қорын концептуалды және логикалық модельдеу (ER-диаграмма)</td>
+    <td style="text-align: right;">10</td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold; padding-top: 6pt;">2. АРНАЙЫ БӨЛІМ (ПРАКТИКАЛЫҚ БӨЛІМ)</td>
+    <td style="text-align: right; font-weight: bold; padding-top: 6pt;">13</td>
+  </tr>
+  <tr>
+    <td style="padding-left: 20pt;">2.1 Есептің алгоритмін құру және оның сипаттамасы</td>
+    <td style="text-align: right;">13</td>
+  </tr>
+  <tr>
+    <td style="padding-left: 20pt;">2.2 «MedCabinet» веб-қосымшасының құрылымы және интерфейсі</td>
+    <td style="text-align: right;">15</td>
+  </tr>
+  <tr>
+    <td style="padding-left: 20pt;">2.3 Пайдаланушылардың 3 демо аккаунты және жүйелік функционал</td>
+    <td style="text-align: right;">18</td>
+  </tr>
+  <tr>
+    <td style="padding-left: 20pt;">2.4 Программалық кодтың орындалуына түсініктеме және тестілеу нәтижелері</td>
+    <td style="text-align: right;">20</td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold; padding-top: 6pt;">ҚОРЫТЫНДЫ</td>
+    <td style="text-align: right; font-weight: bold; padding-top: 6pt;">22</td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold;">ПАЙДАЛАНЫЛҒАН ӘДЕБИЕТТЕР ТІЗІМІ</td>
+    <td style="text-align: right; font-weight: bold;">24</td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold;">ҚОСЫМША А. Бағдарламаның негізгі бастапқы коды (Листинг)</td>
+    <td style="text-align: right; font-weight: bold;">25</td>
+  </tr>
+</table>
+
+<!-- НАҚТЫ WORD РАЗРЫВЫ (PAGE BREAK) -->
+<br clear=all style='mso-special-character:line-break;page-break-before:always'>
+
+<!-- ================= 3. КІРІСПЕ ================= -->
+<h1>КІРІСПЕ</h1>
+
+<p class="MsoNormal"><b>Тақырыптың өзектілігі.</b> Қазіргі таңда денсаулық сақтау саласын цифрландыру және ақпараттық технологияларды медициналық мекемелердің күнделікті жұмыс процесіне енгізу мемлекеттік саясаттың басым бағыттарының бірі болып табылады. Емханалар мен ауруханалардағы емдеу-диагностикалық кабинеттердің жүктемесін дұрыс бөлу, дәрігерлердің қабылдау кестесін жүйелеу және науқастардың уақытын тиімді пайдалану — медициналық қызмет көрсету сапасын арттырудың шешуші факторы. Дәстүрлі қағазбастылық пен кезек күту мәселелері пациенттердің ғана емес, медициналық персоналдың да жұмысын қиындатады. Осыған байланысты медициналық кабинеттерді онлайн брондауға, дәрігерлер мен пациенттер арасындағы өзара байланысты автоматтандыруға және ресми электрондық қабылдау талондарын қалыптастыруға мүмкіндік беретін заманауи жеңіл әрі дербес веб-жүйелерді әзірлеу өте өзекті ғылыми-тәжірибелік мәселе болып саналады.</p>
+
+<p class="MsoNormal"><b>Зерттеу мақсаты.</b> Медициналық мекемелердегі кабинеттер қорын тиімді басқаруға, дәрігерлерге кабинеттерді брондауға және пациенттерге дәрігер қабылдауына онлайн жазылуға арналған дербес (серверге тәуелсіз, браузерде тікелей ашылатын) «MedCabinet» веб-қосымшасын жобалау және құру.</p>
+
+<p class="MsoNormal"><b>Зерттеу объектісі.</b> Емдеу-алдын алу мекемелеріндегі медициналық кабинеттердің қолжетімділігін реттеу, брондау және науқастарды қабылдауға жазу процестері.</p>
+
+<p class="MsoNormal"><b>Зерттеу пәні.</b> Медициналық кабинеттерді брондау веб-қосымшасын құруда қолданылатын интернет-технологиялар: HTML5, CSS3, таза JavaScript (ES6) және браузердің жергілікті деректер қоры (LocalStorage).</p>
+
+<p class="MsoNormal"><b>Зерттеу міндеттері:</b></p>
+<ul>
+  <li>Медициналық мекемелерде кабинеттерді басқару мен пациенттерді қабылдау процестерін талдау және пәндік саланың ақпараттық қажеттіліктерін анықтау;</li>
+  <li>Деректер қорының концептуалды және инфологиялық моделін (ER-диаграммасын) құрастыру;</li>
+  <li>Клиенттік веб-технологиялар (HTML5, CSS3, JavaScript) негізінде ыңғайлы, бейімделгіш (responsive) интерфейс пен жұмыс алгоритмін әзірлеу;</li>
+  <li>Жүйеге қатаң рөлдік қолжетімділік негізінде 3 нақты демо аккаунтты (Пациент, Дәрігер, Әкімші) енгізу және олардың арасында 1 басумен жылдам ауысуды жүзеге асыру;</li>
+  <li>Кабинеттердің санитарлық кварцтау сұранысын, SMS/WhatsApp еске салғыштарын және баспаға арналған штрих-кодты ресми қабылдау талонын генерациялауды жасау;</li>
+  <li>Қосымшаны күрделі серверсіз, кез келген дербес компьютерде <code>index.html</code> файлын басу арқылы тікелей ашылатын етіп оңтайландыру және тестілеу.</li>
+</ul>
+
+<p class="MsoNormal"><b>Зерттеудің жаңалығы мен практикалық құндылығы.</b> Әзірленген «MedCabinet» веб-қосымшасы күрделі сыртқы серверлерді (backend/Node.js/деректер қоры серверлерін) орнатуды талап етпейді. Ол браузердің LocalStorage технологиясы арқылы деректер тұрақтылығын қамтамасыз етеді және офлайн режимде тікелей жұмыс істейді. Жүйеде нақты 3 демо аккаунт (Марат Жұмабаев — пациент, Д-р Берік Ерболұлы — кардиолог, Жақсылық Шыңғысхан — әкімші) арқылы көп рөлдік архитектура қарастырылған. Жобаны емханалардың ішкі жұмысында, оқу процесінде және дәрігерлік кабинеттерді жедел бөлуде кеңінен қолдануға болады.</p>
+
+<!-- НАҚТЫ WORD РАЗРЫВЫ (PAGE BREAK) -->
+<br clear=all style='mso-special-character:line-break;page-break-before:always'>
+
+<!-- ================= 4. 1-БӨЛІМ ================= -->
+<h1>1. ЖАЛПЫ БӨЛІМ (ТЕОРИЯЛЫҚ НЕГІЗДЕРІ)</h1>
+
+<h2>1.1 Есептің қойылуы, пәндік саланы сипаттау және талдау</h2>
+
+<p class="MsoNormal">Қазіргі заманғы медициналық орталықтар көпсалалы диагностикалық және емдеу аппаратураларымен жабдықталған ондаған кабинеттерден тұрады. Бір кабинетте ауысым бойынша бірнеше дәрігер (терапевт, кардиолог, эндокринолог, УЗИ маманы және т.б.) қызмет көрсетуі мүмкін. Сонымен қатар, медициналық санитарлық ережелерге сәйкес, хирургиялық немесе кардиологиялық тексеруден кейін кабинеттерге кварцтау (ультракүлгін сәулемен залалсыздандыру) және дезинфекция жүргізілуі міндетті.</p>
+
+<p class="MsoNormal">Дәстүрлі тәсілде кабинеттердің бос немесе бос еместігі қағаз журналдар немесе медбикелердің ауызша келісімі арқылы реттеледі. Бұл келесідей өзекті кемшіліктерге әкеледі:</p>
+<ul>
+  <li>Кабинеттердің бір уақытта екі маманға қабаттасып брондалып қалу қаупі (коллизия);</li>
+  <li>Науқастардың дәрігер қабылдауына жазылу уақыты мен кабинет нөмірін шатастыруы;</li>
+  <li>Санитарлық өңдеу уақытының ескерілмеуінен емделушілердің дәлізде ұзақ уақыт кезекте тұруы;</li>
+  <li>Клиника әкімшілігінің кабинеттер жүктемесіне жедел статистикалық бақылау жасай алмауы.</li>
+</ul>
+
+<p class="MsoNormal">Осыған орай, қойылған міндет — кабинеттер каталогын көрнекі түрде көрсететін, қабаттар мен жабдықтар бойынша іздеуді қамтамасыз ететін, дәрігерге қажетті уақытқа кабинетті бекітуге мүмкіндік беретін және пациентке штрих-коды бар электрондық талон беретін веб-жүйе әзірлеу болып табылады.</p>
+
+<h2>1.2 Сайтты құру кезеңдері, қолданылатын веб-технологиялар және олардың мінездемесі</h2>
+
+<p class="MsoNormal">Курстық жобаны әзірлеу келесі негізгі кезеңдерден тұрды: талдау және талаптарды қалыптастыру; ақпараттық модельдеу; UI/UX интерфейсті жобалау; бағдарламалау және тестілеу.</p>
+
+<p class="MsoNormal">Жүйені құруда келесі базалық технологиялар қолданылды:</p>
+<ul>
+  <li><b>HTML5 (HyperText Markup Language 5):</b> Веб-қосымшаның семантикалық қаңқасын құрайды. <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code> семантикалық тегтері арқылы контент құрылымы жүйеленді.</li>
+  <li><b>CSS3 (Cascading Style Sheets 3):</b> Заманауи минималистік медициналық визуалды дизайн жасау үшін пайдаланылды. Flexbox, Grid жүйесі және <code>@media print</code> ережесі қолданылды.</li>
+  <li><b>JavaScript (ECMAScript 6+):</b> Қосымшаның барлық динамикалық логикасын, оқиғаларын (Event Listeners), модальді терезелерін және іздеу алгоритмдерін жүзеге асырды.</li>
+  <li><b>Web Storage API (LocalStorage):</b> Клиенттік браузердің тұрақты жады. Серверсіз барлық енгізілген мәліметтердің (брондар, жазылулар, жаңа кабинеттер) сақталуын қамтамасыз етеді.</li>
+</ul>
+
+<h2>1.3 Деректер қорын концептуалды және логикалық модельдеу (ER-диаграмма)</h2>
+
+<p class="MsoNormal">Жүйенің деректер қоры инфологиялық модель түрінде құрастырылды. Басты нысандар (субъектілер): Пайдаланушылар (Users), Кабинеттер (Cabinets), Брондар (Bookings), Қабылдаулар (Appointments) және Еске салғыштар (Reminders).</p>
+
+<p class="title-p" style="font-weight: bold; margin-top: 10pt;">1-кесте. «MedCabinet» жүйесінің концептуалды деректер құрылымы</p>
+<table class="data-table">
+  <tr>
+    <th style="width: 25%;">Кесте атауы</th>
+    <th style="width: 45%;">Негізгі өрістер (Атрибуттар)</th>
+    <th style="width: 30%;">Сипаттамасы</th>
+  </tr>
+  <tr>
+    <td><b>Users</b></td>
+    <td>id, role, name, email, phone, avatar, bio, specialty, iin, insurance</td>
+    <td>3 демо аккаунт мәліметтері: Пациент, Дәрігер, Әкімші</td>
+  </tr>
+  <tr>
+    <td><b>Cabinets</b></td>
+    <td>id, number, title, floor, category, status, equipment</td>
+    <td>Клиника кабинеттерінің нөмірі, қабаты, күйі және жабдықтары</td>
+  </tr>
+  <tr>
+    <td><b>Bookings</b></td>
+    <td>id, cabinetId, doctorId, date, startTime, endTime, purpose, needsSterilization</td>
+    <td>Дәрігерлердің кабинеттерді уақыт аралығына брондауы</td>
+  </tr>
+  <tr>
+    <td><b>Appointments</b></td>
+    <td>id, patientId, doctorId, cabinetNumber, date, time, symptoms, status</td>
+    <td>Науқастардың дәрігер қабылдауына жазылу талондары</td>
+  </tr>
+  <tr>
+    <td><b>Reminders</b></td>
+    <td>id, recipientName, recipientPhone, channel, message, sentAt, status</td>
+    <td>Автоматты SMS және WhatsApp еске салғыш хабарламалары</td>
+  </tr>
+</table>
+
+<!-- НАҚТЫ WORD РАЗРЫВЫ (PAGE BREAK) -->
+<br clear=all style='mso-special-character:line-break;page-break-before:always'>
+
+<!-- ================= 5. 2-БӨЛІМ ================= -->
+<h1>2. АРНАЙЫ БӨЛІМ (ПРАКТИКАЛЫҚ БӨЛІМ)</h1>
+
+<h2>2.1 Есептің алгоритмін құру және оның сипаттамасы</h2>
+
+<p class="MsoNormal">Қосымшаның жұмыс істеу алгоритмі пайдаланушының таңдалған рөліне (Пациент, Дәрігер, Әкімші) тікелей байланысты тармақталады. Жүйенің жалпы жұмыс циклі келесі негізгі қадамдар бойынша орындалады:</p>
+<ul>
+  <li><code>index.html</code> файлы ашылған кезде LocalStorage жадынан деректер оқылады. Егер жад бос болса, автоматты түрде бастапқы 3 таза демо аккаунт базасы енгізіледі;</li>
+  <li>Ағымдағы белсенді пайдаланушы анықталып, рөлге тән батырмалар мен қолжетімділік деңгейі белсендіріледі;</li>
+  <li>Пациент қабылдауға жазылғанда, оның мәліметтері Appointments кестесіне түсіп, ресми талон генерацияланады және SMS ескертпе жіберіледі;</li>
+  <li>Дәрігер кабинет брондағанда, кабинет күйі «Брондалған» күйіне ауысып, медбикеге санитарлық тазалау тапсырмасы белгіленеді;</li>
+  <li>Әкімші жаңа кабинеттер қосады, күйлерін өзгертеді немесе бүкіл базаны JSON файлы ретінде экспорттайды.</li>
+</ul>
+
+<h2>2.2 «MedCabinet» веб-қосымшасының құрылымы және интерфейсі</h2>
+
+<p class="MsoNormal">Веб-қосымша бір беттік қолданба (Single Page Application — SPA) қағидасы бойынша таза HTML5, CSS3 және JavaScript негізінде жасалған. Басты терезе мынадай функционалдық аймақтардан тұрады:</p>
+<ul>
+  <li><b>Жоғарғы авторлық жолақ (Top Creator Bar):</b> Жоба авторы Жақсылық Шыңғысхан туралы ақпаратты және жүйенің серверсіз LocalStorage арқылы жұмыс істейтіндігін көрсетеді;</li>
+  <li><b>Негізгі навигация (Header):</b> Логотип, бөлімдер арасында ауысу батырмалары («Кабинеттер каталогы», «Менің брондарым», «Еске салғыштар»), белсенді пайдаланушы профилі және мәліметтерді JSON түрінде жүктеп алу батырмасы;</li>
+  <li><b>3 Демо Аккаунт ауыстырғыш панелі (Role Quick Bar):</b> Қорғау кезінде комиссияға өте көрнекі болу үшін арнайы жасалған. Бір рет басу арқылы жүйе Пациент, Дәрігер немесе Әкімші режиміне бірден қайта құрылады;</li>
+  <li><b>Индикативтік статистика блогы:</b> Жалпы кабинеттер саны, бос кабинеттер, брондалған кабинеттер және тіркелген қабылдаулар санын көрсететін 4 карточка;</li>
+  <li><b>Интерактивті сүзгі жолағы:</b> Іздеу жолы (Search Box) және қабаттар бойынша жедел сүзгілеу (Барлығы, 1-4 қабат);</li>
+  <li><b>Кабинеттер каталогының карточкалары:</b> Әр кабинеттің нөмірі, қабаты, бөлімі, атауы, аппаратуралары және ағымдағы жұмыс күйі (Бос, Брондалған, Санитарлық өңдеуде, Жөндеуде).</li>
+</ul>
+
+<h2>2.3 Пайдаланушылардың 3 демо аккаунты және жүйелік функционал</h2>
+
+<p class="MsoNormal">Тапсырма талаптарына сәйкес жүйеден барлық артық аккаунттар тазартылып, тек 3 нақты демо аккаунт бекітілген:</p>
+
+<p class="MsoNormal"><b>1. Науқас (Пациент) — Марат Жұмабаев:</b><br>
+Жеке деректері: ЖСН: <code>920415350124</code>, МӘМС сақтандыру полисі: <code>KZ-998821</code>, телефон: <code>+7 (775) 123-45-67</code>.<br>
+Функционалы: Бос кабинеттер бойынша дәрігерге (Д-р Берік Ерболұлы) қабылдауға жазылу. Жазылған соң ресми «Қабылдау талонын» қағазға басып шығару (Print) және SMS хабарламаларды қарау.</p>
+
+<p class="MsoNormal"><b>2. Дәрігер — Д-р Берік Ерболұлы:</b><br>
+Жеке деректері: Жоғары санатты кардиолог-терапевт (М.ғ.к.), бекітілген №102 кабинет, телефон: <code>+7 (702) 555-12-34</code>.<br>
+Функционалы: Кабинетті қабылдау уақытына брондау және «Санитарлық кварцтау» қажеттілігін белгілеу; кабинетті қабылдау біткен соң босату; өзіне жазылған науқастардың (Марат Жұмабаев) тізімін көру және «Қабылданды ✓» деп белгілеу.</p>
+
+<p class="MsoNormal"><b>3. Әкімші (Админ) — Жақсылық Шыңғысхан:</b><br>
+Жеке деректері: Клиника бас әкімшісі & жүйе әзірлеушісі, телефон: <code>+7 (777) 777-88-99</code>.<br>
+Функционалы: Жүйені толық бақылау; кез келген кабинеттің күйін өзгерту (Бос ↔ Брондалған ↔ Санитарлық тазалау ↔ Жөндеу); жаңа кабинеттер қосу немесе қажетсіздерін өшіру; клиникадағы барлық жазбаларды басқару; базаны JSON форматында компьютерге сақтау немесе бастапқы 3 демо аккаунт күйіне қайтару.</p>
+
+<h2>2.4 Программалық кодтың орындалуына түсініктеме және тестілеу нәтижелері</h2>
+
+<p class="MsoNormal">Жүйенің негізгі логикасы <code>app.js</code> файлында модульдік түрде орындалған:</p>
+<ul>
+  <li>LocalStorage-пен жұмыс модулі — <code>getDatabase()</code> және <code>saveDatabase(db)</code> функциялары арқылы деректерді JSON форматына түрлендіріп, жергілікті жадқа жазады;</li>
+  <li>Рөлдерді ауыстыру модулі — <code>switchUserRole(role)</code> функциясы арқылы бет қайта жүктелмей (No page reload) жедел орындалады;</li>
+  <li>Қабылдау талонын басып шығару модулі — <code>printPass(appId)</code> функциясы арқылы ресми талон қалыптасады (пациент аты-жөні, ЖСН, емхана мөрі, штрих-код) және <code>window.print()</code> арқылы қағазға шығарылады.</li>
+</ul>
+
+<p class="title-p" style="font-weight: bold; margin-top: 10pt;">2-кесте. «MedCabinet» веб-қосымшасын тестілеу нәтижелері</p>
+<table class="data-table">
+  <tr>
+    <th style="width: 30%;">Тестіленетін функция</th>
+    <th style="width: 35%;">Күтілетін нәтиже</th>
+    <th style="width: 25%;">Нақты нәтиже</th>
+    <th style="width: 10%;">Қорытынды</th>
+  </tr>
+  <tr>
+    <td>index.html файлын қос басу арқылы ашу</td>
+    <td>Браузерде серверсіз, тікелей 100% ашылуы</td>
+    <td>Chrome, Edge, Safari-де қатесіз ашылды</td>
+    <td>Сәтті</td>
+  </tr>
+  <tr>
+    <td>3 Демо аккаунт арасында ауысу</td>
+    <td>Пациент, дәрігер және әкімші рөлдерінің бірден өзгеруі</td>
+    <td>Интерфейс бірден жаңартылды</td>
+    <td>Сәтті</td>
+  </tr>
+  <tr>
+    <td>Кабинетті брондау және босату</td>
+    <td>Күйінің «Брондалғанға» ауысуы және босатылуы</td>
+    <td>Базада және экранда жедел өзгерді</td>
+    <td>Сәтті</td>
+  </tr>
+  <tr>
+    <td>Қабылдау талонын басып шығару</td>
+    <td>Штрих-код пен мөрі бар талонның қағазға шығуы</td>
+    <td>Баспа диалогы қатесіз ашылды</td>
+    <td>Сәтті</td>
+  </tr>
+  <tr>
+    <td>Мәліметтерді JSON түрінде экспорттау</td>
+    <td>Компьютерге .json файлының жүктелуі</td>
+    <td>Файл компьютерге толық жүктелді</td>
+    <td>Сәтті</td>
+  </tr>
+</table>
+
+<!-- НАҚТЫ WORD РАЗРЫВЫ (PAGE BREAK) -->
+<br clear=all style='mso-special-character:line-break;page-break-before:always'>
+
+<!-- ================= 6. ҚОРЫТЫНДЫ ================= -->
+<h1>ҚОРЫТЫНДЫ</h1>
+
+<p class="MsoNormal">«Медицинадағы интернет технологиялар» пәні бойынша орындалған курстық жұмыс шеңберінде медициналық кабинеттер қорын тиімді басқаруға, брондауға және дәрігерге қабылдауға жазылуға арналған <b>«MedCabinet»</b> дербес веб-жүйесі толықтай жобаланып, практикалық тұрғыда жүзеге асырылды.</p>
+
+<p class="MsoNormal">Жұмысты орындау барысында келесі нәтижелерге қол жеткізілді:</p>
+<ul>
+  <li>Медициналық мекемелердің жұмыс ерекшеліктері зерделеніп, кабинеттердің брондалуы мен санитарлық өңделу процестері толық автоматтандырылды;</li>
+  <li>HTML5, CSS3 және таза JavaScript (ES6) негізінде ешқандай сыртқы фреймворктерге тәуелсіз, заманауи жеңіл медициналық интерфейс құрылды;</li>
+  <li>Қосымша 100% жергілікті (локальды) режимде жұмыс істейтіндей етіп жасалды. Пайдаланушы немесе оқытушы <code>index.html</code> файлын тінтуірмен екі рет басқанда, жүйе кез келген браузерде серверсіз бірден ашылады;</li>
+  <li>Тапсырма талаптарына сай барлық артық аккаунттар тазартылып, нақты <b>3 демо аккаунт</b> (Марат Жұмабаев — пациент, Д-р Берік Ерболұлы — дәрігер, Жақсылық Шыңғысхан — әкімші) бекітілді және жоғарғы панельде 1 басу арқылы олардың арасында ауысу мүмкіндігі жасалды;</li>
+  <li>Қабылдауға жазылған пациенттерге ресми мөрі мен штрих-коды бар медициналық талонды басып шығару (Print) функционалы және автоматты SMS/WhatsApp хабарламаларының тікелей симуляциясы қосылды;</li>
+  <li>Мәліметтер базасының қауіпсіздігі үшін кез келген уақытта бүкіл деректерді JSON файлы ретінде компьютерге сақтау немесе «Базаны жаңарту» батырмасы арқылы бастапқы қалпына келтіру тетігі қарастырылды.</li>
+</ul>
+
+<p class="MsoNormal"><b>Ұсыныстар:</b> Болашақта бұл веб-қосымшаны емханалардың жалпы МӘМС бірыңғай мемлекеттік ақпараттық жүйелерімен байланыстыруға және нақты SMS-шлюздерін қосу арқылы науқастардың телефондарына тікелей нақты SMS жолдауға мүмкіндік бар.</p>
+
+<!-- НАҚТЫ WORD РАЗРЫВЫ (PAGE BREAK) -->
+<br clear=all style='mso-special-character:line-break;page-break-before:always'>
+
+<!-- ================= 7. ӘДЕБИЕТТЕР ТІЗІМІ ================= -->
+<h1>ПАЙДАЛАНЫЛҒАН ӘДЕБИЕТТЕР ТІЗІМІ</h1>
+
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">1. Айзекс С. Dynamic HTML. Секреты создания интерактивных Web-страниц. — М.: Издательский дом «Вильямс», 2008. — 496 с.</p>
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">2. Айзенменгер Р. HTML 3.2/4.0. Справочник. — М.: Бином, 2008. — 384 с.</p>
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">3. Бөрібаев Б., Мадьярова Г.А. WEB-технологиялар: оқулық. — Алматы: ЖШС РПБК «Дәуір», 2011. — 360 б.</p>
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">4. Глушаков С.В., Жакин И.А., Хачиров Т.С. Программирование Web-страниц. JavaScript. VBScript. — М.: АСТ, 2010. — 390 с.</p>
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">5. Флэнаган Д. JavaScript. Подробное руководство, 6-е издание. — СПб.: Символ-Плюс, 2012. — 1080 с.</p>
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">6. Duckett Jon. HTML and CSS: Design and Build Websites. — Indianapolis: John Wiley & Sons, 2011. — 490 p.</p>
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">7. Chisholm W., May M. Universal Design for Web Applications. — Sebastopol: O'Reilly Media, 2008. — 200 p.</p>
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">8. Дюпуи С., Квигли Э. JavaScript. Экспрес-курс. — М.: БХВ-Петербург, 2015. — 416 с.</p>
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">9. Қазақстан Республикасының «Халық денсаулығы және денсаулық сақтау жүйесі туралы» Кодексі. — Астана: Ақорда, 2020.</p>
+<p class="MsoNormal" style="text-indent: 0cm; margin-bottom: 6pt;">10. MDN Web Docs. Web Storage API (LocalStorage and SessionStorage) [Электрондық ресурс]. — Қолжетімділік тәртібі: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API</p>
+
+<!-- НАҚТЫ WORD РАЗРЫВЫ (PAGE BREAK) -->
+<br clear=all style='mso-special-character:line-break;page-break-before:always'>
+
+<!-- ================= 8. ҚОСЫМША А ================= -->
+<h1>ҚОСЫМША А</h1>
+<p class="title-p" style="font-weight: bold; margin-bottom: 12pt;">«MedCabinet» бағдарламалық қосымшасының негізгі бастапқы коды (Листинг)</p>
+
+<p class="MsoNormal" style="text-indent: 0cm; font-weight: bold;">А.1 app.js файлы — 3 демо аккаунттың инициализациясы мен рөлдерді ауыстыру функциясы:</p>
+<div class="code-box">const DB_KEY = 'medcabinet_3demo_standalone_db';
+const SESSION_KEY = 'medcabinet_3demo_standalone_session';
+
+const DEFAULT_DATABASE = {
+  users: [
+    {
+      id: 'user-admin',
+      role: 'admin',
+      name: 'Жақсылық Шыңғысхан',
+      email: 'syngyszaksylyk854@gmail.com',
+      phone: '+7 (777) 777-88-99',
+      position: 'Клиника бас әкімшісі & Жүйе әзірлеушісі'
+    },
+    {
+      id: 'user-doctor',
+      role: 'doctor',
+      name: 'Д-р Берік Ерболұлы',
+      email: 'berik.doctor@densaulyq.kz',
+      phone: '+7 (702) 555-12-34',
+      specialty: 'Кардиолог-терапевт (Жоғары санат, М.ғ.к.)',
+      assignedCabinet: '102'
+    },
+    {
+      id: 'user-patient',
+      role: 'patient',
+      name: 'Марат Жұмабаев',
+      email: 'marat.patient@densaulyq.kz',
+      phone: '+7 (775) 123-45-67',
+      iin: '920415350124',
+      insurance: 'KZ-998821'
+    }
+  ]
+};
+
+function switchUserRole(role) {
+  const db = getDatabase();
+  const targetUser = db.users.find(u => u.role === role);
+  if (targetUser) {
+    setCurrentUser(targetUser);
+    showToast('Аккаунт ауыстырылды', 'Қазіргі аккаунт: ' + targetUser.name, 'info');
+    renderApp();
+  }
+}</div>
+
+<p class="MsoNormal" style="text-indent: 0cm; font-weight: bold; margin-top: 10pt;">А.2 Қабылдау талонын басып шығару (Print) логикасы:</p>
+<div class="code-box">function printPass(appId) {
+  const db = getDatabase();
+  const app = db.appointments.find(a => a.id === appId);
+  if (!app) return;
+
+  const printArea = document.getElementById('print-pass-area');
+  printArea.innerHTML = `
+    &lt;div style="border: 2px dashed #0d9488; padding: 24px; border-radius: 14px;"&gt;
+      &lt;h2&gt;MedCabinet — Ресми Қабылдау Талоны&lt;/h2&gt;
+      &lt;div&gt;&lt;strong&gt;Науқас:&lt;/strong&gt; \${app.patientName}&lt;/div&gt;
+      &lt;div&gt;&lt;strong&gt;ЖСН:&lt;/strong&gt; \${app.patientIin || '920415350124'}&lt;/div&gt;
+      &lt;div&gt;&lt;strong&gt;Дәрігер:&lt;/strong&gt; \${app.doctorName}&lt;/div&gt;
+      &lt;div&gt;&lt;strong&gt;Кабинет:&lt;/strong&gt; №\${app.cabinetNumber}&lt;/div&gt;
+      &lt;div&gt;&lt;strong&gt;Уақыты:&lt;/strong&gt; \${app.date} сағат \${app.time}&lt;/div&gt;
+      &lt;div&gt;&lt;strong&gt;Шағымы:&lt;/strong&gt; «\${app.symptoms}»&lt;/div&gt;
+    &lt;/div&gt;
+  `;
+  window.print();
+}</div>
+
+</div>
+</body>
+</html>
