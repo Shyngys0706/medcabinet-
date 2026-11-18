@@ -5,6 +5,7 @@ import { PatientPortal } from './components/PatientPortal';
 import { DoctorPortal } from './components/DoctorPortal';
 import { AdminPortal } from './components/AdminPortal';
 import { PrintPassModal } from './components/PrintPassModal';
+import { CourseworkViewerModal } from './components/CourseworkViewerModal';
 import { ToastContainer, ToastMessage } from './components/Toast';
 import {
   fetchCabinets,
@@ -21,9 +22,10 @@ import {
   createCabinet,
   updateCabinet,
   deleteCabinet,
+  deleteUser,
   updateUserProfile,
 } from './api';
-import { LogOut, User as UserIcon, Shield, Stethoscope, FileText, CheckCircle2 } from 'lucide-react';
+import { LogOut, User as UserIcon, Shield, Stethoscope, FileText, CheckCircle2, Download, BookOpen } from 'lucide-react';
 
 const TOKEN_KEY = 'medcabinet_server_token';
 const USER_KEY = 'medcabinet_server_user';
@@ -54,6 +56,7 @@ export default function App() {
   // 3. UI State
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const [ticketAppointment, setTicketAppointment] = useState<Appointment | null>(null);
+  const [showTheoryModal, setShowTheoryModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const addToast = useCallback((title: string, message: string, type: 'success' | 'error' | 'info' = 'info') => {
@@ -263,6 +266,20 @@ export default function App() {
     }
   };
 
+  const handleDeleteUser = async (userId: string, userName: string) => {
+    if (!confirm(`«${userName}» пайдаланушысын серверлік деректер базасынан біржола өшіруді растайсыз ба? Оған қатысты барлық жазылулар да жойылады.`)) return;
+    try {
+      await deleteUser(userId);
+      setUsers((prev) => prev.filter((u) => u.id !== userId));
+      setDoctors((prev) => prev.filter((d) => d.id !== userId));
+      setAppointments((prev) => prev.filter((a) => a.patientId !== userId && a.doctorId !== userId));
+      setBookings((prev) => prev.filter((b) => b.doctorId !== userId));
+      addToast('Пайдаланушы өшірілді', `«${userName}» сервер базасынан сәтті жойылды`, 'info');
+    } catch (err: any) {
+      addToast('Қате', err.message || 'Пайдаланушыны өшіру мүмкін болмады', 'error');
+    }
+  };
+
   // 5. IF NOT LOGGED IN -> RENDER AUTH SCREEN (Register/Login)
   if (!currentUser) {
     return (
@@ -312,20 +329,40 @@ export default function App() {
             <span className="text-slate-600">·</span>
             <span className="text-slate-300">Курстық жұмыс (Медициналық интернет технологиялар)</span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <span className="flex items-center gap-1.5 bg-slate-800 px-2 py-0.5 rounded text-[10px] text-teal-300">
               <span className="w-1.5 h-1.5 rounded-full bg-teal-400 inline-block animate-pulse"></span>
-              Серверлік деректер базасы белсенді
+              Сервер белсенді
             </span>
+            <span className="text-slate-600">|</span>
+            <button
+              type="button"
+              onClick={() => setShowTheoryModal(true)}
+              className="bg-teal-700/80 hover:bg-teal-600 text-white font-bold px-2.5 py-1 rounded-md text-[11px] flex items-center gap-1.5 transition cursor-pointer shadow-xs"
+              title="Курстық жұмыстың толық 25 беттік теориясын экранда тікелей оқу"
+            >
+              <BookOpen className="w-3 h-3 text-teal-200" />
+              <span>Курстық жұмысты оқу (25 бет)</span>
+            </button>
             <span className="text-slate-600">|</span>
             <a
               href="/kurstyk_zhumys_teoriya.docx"
-              download
-              className="text-teal-400 hover:text-teal-300 font-bold underline decoration-teal-500/50 flex items-center gap-1"
+              download="Жақсылық_Шыңғысхан_Курстық_жұмыс.docx"
+              className="text-teal-400 hover:text-teal-300 font-bold underline decoration-teal-500/50 flex items-center gap-1 text-[11px]"
               title="Курстық жұмыстың ресми Word құжатын жүктеп алу (.docx)"
             >
               <FileText className="w-3 h-3" />
-              <span>Курстық жұмыс (.docx)</span>
+              <span>Word (.docx)</span>
+            </a>
+            <span className="text-slate-600">|</span>
+            <a
+              href="/medcabinet.zip"
+              download="medcabinet.zip"
+              className="text-emerald-400 hover:text-emerald-300 font-bold underline decoration-emerald-500/50 flex items-center gap-1 text-[11px]"
+              title="GitHub / Render үшін жобаның толық кодын жүктеу (.zip)"
+            >
+              <Download className="w-3 h-3" />
+              <span>Код (.zip)</span>
             </a>
           </div>
         </div>
@@ -420,6 +457,7 @@ export default function App() {
             onDeleteAppointment={handleCancelAppointment}
             onDeleteBooking={handleCancelBooking}
             onViewTicket={(app) => setTicketAppointment(app)}
+            onDeleteUser={handleDeleteUser}
           />
         )}
       </main>
@@ -438,6 +476,12 @@ export default function App() {
         appointment={ticketAppointment}
         patientUser={currentUser.role === 'patient' ? currentUser : undefined}
         doctorUser={doctors.find((d) => d.id === ticketAppointment?.doctorId)}
+      />
+
+      {/* Coursework 25-page Reader Modal */}
+      <CourseworkViewerModal
+        isOpen={showTheoryModal}
+        onClose={() => setShowTheoryModal(false)}
       />
 
       {/* Toast Notifications */}

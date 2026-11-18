@@ -352,6 +352,33 @@ app.get('/api/users', (req: Request, res: Response): any => {
   return res.json(db.users.map(sanitizeUser));
 });
 
+// Пайдаланушыны сервер базасынан өшіру (Админ құқығымен)
+app.delete('/api/users/:id', (req: Request, res: Response): any => {
+  const { id } = req.params;
+  const db = getDb();
+
+  const userIndex = db.users.findIndex(u => u.id === id);
+  if (userIndex === -1) {
+    return res.status(404).json({ error: 'Пайдаланушы табылмады' });
+  }
+
+  const user = db.users[userIndex];
+  // Бас әкімшіні өшіруге тыйым салынады
+  if (user.role === 'admin' || user.login === 'admin') {
+    return res.status(403).json({ error: 'Бас әкімші (Админ) аккаунтын өшіруге болмайды!' });
+  }
+
+  // Пайдаланушыны өшіру
+  db.users.splice(userIndex, 1);
+
+  // Пайдаланушыға байланысты қабылдаулар мен брондарды тазарту
+  db.appointments = db.appointments.filter(a => a.patientId !== id && a.doctorId !== id);
+  db.bookings = db.bookings.filter(b => b.doctorId !== id);
+
+  saveDb(db);
+  return res.json({ message: `«${user.name}» пайдаланушысы серверлік базадан сәтті өшірілді!` });
+});
+
 // Дәрігерлер тізімі (Барлық қолданушылар дәрігер таңдау үшін көреді)
 app.get('/api/doctors', (req: Request, res: Response): any => {
   const db = getDb();

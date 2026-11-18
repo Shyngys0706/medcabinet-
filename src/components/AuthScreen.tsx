@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { registerUser, loginUser } from '../api';
 import { User } from '../types';
-import { ShieldCheck, User as UserIcon, Stethoscope, Lock, Phone, UserCheck, AlertCircle, CheckCircle2, Building2 } from 'lucide-react';
+import { CourseworkViewerModal } from './CourseworkViewerModal';
+import { ShieldCheck, User as UserIcon, Stethoscope, Lock, Phone, UserCheck, AlertCircle, CheckCircle2, Building2, BookOpen } from 'lucide-react';
 
 interface AuthScreenProps {
   onSuccess: (user: User, token: string) => void;
@@ -28,6 +29,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
+  const [showTheoryModal, setShowTheoryModal] = useState(false);
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,8 +82,45 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
 
       {/* Header Branding */}
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center z-10 px-4">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-teal-500 to-emerald-400 text-white shadow-xl shadow-teal-500/20 mb-3">
-          <span className="text-3xl font-extrabold">✚</span>
+        <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-400 via-teal-500 to-emerald-600 text-white shadow-2xl shadow-teal-500/35 ring-1 ring-white/30 mb-3.5 group transition-transform duration-300 hover:scale-105">
+          <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-teal-400/25 to-emerald-300/20 blur-md -z-10"></div>
+          <svg
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-12 h-12 drop-shadow-sm"
+            aria-label="MedCabinet логотипі"
+          >
+            {/* Clinic cabinet frame */}
+            <rect
+              x="6.5"
+              y="6.5"
+              width="35"
+              height="35"
+              rx="10"
+              fill="white"
+              fillOpacity="0.14"
+              stroke="white"
+              strokeWidth="2"
+              strokeOpacity="0.85"
+            />
+            {/* Medical cross */}
+            <path
+              d="M21.75 11.5H26.25V17.25H32V21.75H26.25V27.5H21.75V21.75H16V17.25H21.75V11.5Z"
+              fill="white"
+              stroke="white"
+              strokeWidth="0.6"
+              strokeLinejoin="round"
+            />
+            {/* ECG heartbeat pulse */}
+            <path
+              d="M11 34.5H17.5L19.8 31L22.8 37.5L25.5 32.2L27.5 34.5H37"
+              stroke="#A7F3D0"
+              strokeWidth="2.1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">MedCabinet</h1>
         <p className="mt-1 text-xs sm:text-sm text-teal-200">
@@ -347,7 +386,46 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
             </form>
           )}
         </div>
+
+        {/* Quick Resource Actions for Student & Commission */}
+        <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-2.5 text-xs z-10 px-4">
+          <button
+            type="button"
+            onClick={() => setShowTheoryModal(true)}
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold transition shadow-md shadow-teal-700/30 cursor-pointer"
+            title="Курстық жұмыстың толық 25 беттік теориясын экранда тікелей оқу"
+          >
+            <BookOpen className="w-4 h-4" />
+            <span>📖 Курстық жұмысты оқу (25 бет)</span>
+          </button>
+          
+          <a
+            href="/kurstyk_zhumys_teoriya.docx"
+            download="Жақсылық_Шыңғысхан_Курстық_жұмыс.docx"
+            className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-teal-300 hover:text-teal-200 border border-slate-700/80 transition font-semibold shadow-xs"
+            title="Word (.docx) құжатын жүктеу"
+          >
+            <span className="text-teal-400">📄</span>
+            <span>Word (.docx)</span>
+          </a>
+          
+          <a
+            href="/medcabinet.zip"
+            download="medcabinet.zip"
+            className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-950/80 hover:bg-emerald-900/90 text-emerald-300 hover:text-emerald-200 border border-emerald-800/60 transition font-semibold shadow-xs"
+            title="GitHub / Render үшін толық код архивін жүктеу"
+          >
+            <span className="text-emerald-400">📦</span>
+            <span>Код (.zip)</span>
+          </a>
+        </div>
       </div>
+
+      {/* Coursework 25-page Reader Modal */}
+      <CourseworkViewerModal
+        isOpen={showTheoryModal}
+        onClose={() => setShowTheoryModal(false)}
+      />
     </div>
   );
 };

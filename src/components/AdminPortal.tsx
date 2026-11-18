@@ -15,6 +15,7 @@ interface AdminPortalProps {
   onDeleteAppointment: (appId: string) => void;
   onDeleteBooking: (bookId: string) => void;
   onViewTicket: (app: Appointment) => void;
+  onDeleteUser: (userId: string, userName: string) => void;
 }
 
 export const AdminPortal: React.FC<AdminPortalProps> = ({
@@ -30,6 +31,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   onDeleteAppointment,
   onDeleteBooking,
   onViewTicket,
+  onDeleteUser,
 }) => {
   const [activeTab, setActiveTab] = useState<'cabinets' | 'users' | 'appointments' | 'reminders'>('cabinets');
   const [newCabModalOpen, setNewCabModalOpen] = useState(false);
@@ -293,6 +295,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                   <th className="py-3 px-4">Телефон нөмірі (Бірегей)</th>
                   <th className="py-3 px-4">Мамандық / ЖСН</th>
                   <th className="py-3 px-4">Тіркелген күні</th>
+                  <th className="py-3 px-4 text-right">Әрекет / Басқару</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
@@ -328,6 +331,20 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                     </td>
                     <td className="py-3.5 px-4 text-slate-400 font-mono text-[11px]">
                       {u.createdAt ? new Date(u.createdAt).toLocaleDateString('kk-KZ') : '2026-11-11'}
+                    </td>
+                    <td className="py-3.5 px-4 text-right">
+                      {u.role === 'admin' || u.login === 'admin' ? (
+                        <span className="text-[10px] text-slate-400 font-semibold italic">Бас әкімші</span>
+                      ) : (
+                        <button
+                          onClick={() => onDeleteUser(u.id, u.name)}
+                          className="inline-flex items-center gap-1 px-2.5 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 font-bold text-xs rounded-lg transition cursor-pointer"
+                          title="Пайдаланушыны серверден толық өшіру"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                          <span>Өшіру</span>
+                        </button>
+                      )}
                     </td>
                   </tr>
                 ))}

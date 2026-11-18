@@ -153,6 +153,14 @@ export async function fetchUsers(): Promise<User[]> {
   return res.json();
 }
 
+export async function deleteUser(id: string): Promise<void> {
+  const res = await fetch(`${API_BASE}/users/${id}`, {
+    method: 'DELETE',
+  });
+  const json = await res.json();
+  if (!res.ok) throw new Error(json.error || 'Пайдаланушыны өшіру қатесі');
+}
+
 export async function fetchDoctors(): Promise<User[]> {
   const res = await fetch(`${API_BASE}/doctors`);
   if (!res.ok) throw new Error('Дәрігерлерді алу мүмкін болмады');

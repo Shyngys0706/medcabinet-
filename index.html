@@ -9,6 +9,23 @@
     <meta property="og:description" content="Медициналық кабинеттерді брондау және дәрігерге жазылу жүйесі: Пациент, Дәрігер және Админ жеке кабинеттері." />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✚</text></svg>">
+    <script>
+      // Harmless Vite HMR WebSocket error suppression for preview environment
+      window.addEventListener('error', function(e) {
+        if (e.message && (e.message.includes('WebSocket') || (e.filename && e.filename.includes('@vite/client')))) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          return true;
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(e) {
+        var str = String((e.reason && (e.reason.stack || e.reason.message)) || e.reason || '');
+        if (str.includes('WebSocket') || str.includes('@vite/client') || str.includes('createWebSocketModuleRunnerTransport')) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }
+      }, true);
+    </script>
   </head>
   <body class="bg-slate-50 text-slate-900 min-h-screen antialiased selection:bg-teal-500 selection:text-white">
     <div id="root"></div>
